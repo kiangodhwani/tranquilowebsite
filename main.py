@@ -60,9 +60,9 @@ founders = {
 }
 
 founder_images = {
-    "Kian (CEO)": "kian.jpg",
-    "Kauel (COO)": "kauel.jpg",
-    "Maryjo (Chief Research Officer)": "maryjo.jpg"
+    "Kian (CEO)": "Kian.jpg",
+    "Kauel (COO)": "Kauel.jpg",
+    "Maryjo (Chief Research Officer)": "maryjo.JPG"
 }
 
 for name, image_path in founder_images.items():
