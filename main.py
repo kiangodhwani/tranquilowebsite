@@ -54,20 +54,20 @@ st.markdown('<div class="paragraph">Using our AI-powered mobile app and smart ri
 st.markdown('<div class="subtitle">Meet the Founders</div>', unsafe_allow_html=True)
 
 founders = {
-    "Kian (CEO)": "Kian is a mental health advocate and researcher with over 10 peer-reviewed publications. He previously led a peer support company that supported over 300 people. He developed Tranquilo from his undergraduate thesis which used wearables to predict mood states in bipolar disorder.",
+    "Kian (CEO)": "Kian is a mental health advocate and researcher with over 10 peer-reviewed publications. He previously led a peer support nonprofit and developed Tranquilo as a continuation of his award-winning undergraduate thesis on digital psychiatry.",
     "Kauel (COO)": "Kauel brings deep experience in biochemistry, manufacturing, and patent strategy. His work ensures that Tranquilo’s hardware meets the highest standards of innovation, efficiency, and intellectual protection.",
     "Maryjo (Chief Research Officer)": "Maryjo has extensive experience conducting clinical trials and is currently training as a nurse. Her clinical insight ensures that Tranquilo is safe, evidence-based, and built with real-world users in mind."
 }
 
-image_files = st.file_uploader("Upload founder images (one at a time)", accept_multiple_files=True, type=['jpg', 'jpeg', 'png'])
+founder_images = {
+    "Kian (CEO)": "kian.jpg",
+    "Kauel (COO)": "kauel.jpg",
+    "Maryjo (Chief Research Officer)": "maryjo.jpg"
+}
 
-if image_files:
-    for image in image_files:
-        st.image(image, caption=image.name, use_column_width=True)
-        for name, bio in founders.items():
-            if name.split()[0].lower() in image.name.lower():
-                st.markdown(f"<div class='paragraph'><strong>{name}</strong><br>{bio}</div>", unsafe_allow_html=True)
-                break
+for name, image_path in founder_images.items():
+    st.image(image_path, caption=name, use_column_width=True)
+    st.markdown(f"<div class='paragraph'><strong>{name}</strong><br>{founders[name]}</div>", unsafe_allow_html=True)
 
 # Contact form
 st.markdown('<div class="subtitle">Contact Us</div>', unsafe_allow_html=True)
@@ -88,5 +88,6 @@ st.markdown("""
         © 2025 Tranquilo. All rights reserved.
     </p>
 """, unsafe_allow_html=True)
+
 
 
