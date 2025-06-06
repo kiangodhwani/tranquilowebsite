@@ -66,7 +66,7 @@ founder_images = {
 }
 
 for name, image_path in founder_images.items():
-    st.image(image_path, caption=name, use_column_width=True)
+    st.image(image_path, caption=name, use_container_width=True)
     st.markdown(f"<div class='paragraph'><strong>{name}</strong><br>{founders[name]}</div>", unsafe_allow_html=True)
 
 # Contact form
